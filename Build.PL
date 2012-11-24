@@ -8,7 +8,6 @@ use Module::Build 0.3601;
 my %module_build_args = (
   "build_requires" => {
     "Carp" => 0,
-    "Data::Printer" => 0,
     "File::Find" => 0,
     "File::Temp" => 0,
     "Module::Build" => "0.3601",
@@ -23,7 +22,7 @@ my %module_build_args = (
     "Yanick Champoux <yanick\@babyl.dyndns.org>"
   ],
   "dist_name" => "DBIx-NoSQL-Store-Manager",
-  "dist_version" => "0.1.1",
+  "dist_version" => "0.2.0",
   "license" => "perl",
   "module_name" => "DBIx::NoSQL::Store::Manager",
   "recommends" => {},

@@ -4,7 +4,7 @@ DBIx::NoSQL::Store::Manager - DBIx::NoSQL as a Moose object store
 
 # VERSION
 
-version 0.1.1
+version 0.2.0
 
 # SYNOPSIS
 
@@ -22,7 +22,7 @@ Just like [DBIx::NoSQL](http://search.cpan.org/perldoc?DBIx::NoSQL) is a layer p
 flexibility of a NoSQL store on top of [DBIx::Class](http://search.cpan.org/perldoc?DBIx::Class), _DBIx::NoSQL::Store::Manager_
 provides a mechanism to drop and retrieve [Moose](http://search.cpan.org/perldoc?Moose) objects from that store.
 
-As can be seen in the [SYNOPSIS](#pod_SYNOPSIS), the store class itself is typically fairly
+As can be seen in the ["SYNOPSIS"](#SYNOPSIS), the store class itself is typically fairly
 bare; most of the work is done by [DBIx::NoSQL::Store::Manager::Model](http://search.cpan.org/perldoc?DBIx::NoSQL::Store::Manager::Model), the
 role the models (i.e., the classes to be stored in the database) must consume.
 
@@ -31,14 +31,14 @@ methods.
 
 # METHODS
 
-## new( models => \@classes )
+## new( models => \\@classes )
 
 Creates a new store manager.
 
 ### Arguments
 
-- models => \@classes
-=item models => $class
+- models => \\@classes
+- models => $class
 
 Classes to be imported as models for the store. Namespaces can also be given
 with a trailing `::`, in which case all modules found under that namespace
@@ -60,19 +60,21 @@ class `MyStore`, that would be `MyStore::Model::`).
     my $store = MyStore->new( models => [ 'Foo::Bar', 'MyStore::Model::' ] );
         # imports Foo::Bar and all classes under MyStore::Model::*
 
-## model_names()
+## model\_names()
 
 Returns the name of all models known to the store.
 
-## model_classes()
+## model\_classes()
 
 Returns the full class name of all models known to the store.
 
-## model_class( $name )
+## model\_class( $name )
 
 Returns the full class name of the given model.
 
-## new_model_object( $model_name, @args )
+## create( $model\_name, @args )
+
+## new\_model\_object( $model\_name, @args )
 
 Shortcut constructor for a model class of the store. Equivalent to
 
@@ -81,17 +83,17 @@ Shortcut constructor for a model class of the store. Equivalent to
 
 # SEE ALSO
 
-* Original blog entry introducing the module: [http://babyl.dyndns.org/techblog/entry/shaving-the-white-whale](http://babyl.dyndns.org/techblog/entry/shaving-the-white-whale)
+\* Original blog entry introducing the module: [http://babyl.dyndns.org/techblog/entry/shaving-the-white-whale](http://babyl.dyndns.org/techblog/entry/shaving-the-white-whale)
 
 ## Similar Modules
 
-* [KiokuDB](http://search.cpan.org/perldoc?KiokuDB)
+\* [KiokuDB](http://search.cpan.org/perldoc?KiokuDB)
 
-* [Elastic::Model](http://search.cpan.org/perldoc?Elastic::Model)
+\* [Elastic::Model](http://search.cpan.org/perldoc?Elastic::Model)
 
 # AUTHOR
 
-Yanick Champoux <yanick@babyl.dyndns.org>
+Yanick Champoux <yanick@babyl.dyndns.org> [![endorse](http://api.coderwall.com/yanick/endorsecount.png)](http://coderwall.com/yanick)
 
 # COPYRIGHT AND LICENSE
 

@@ -1,5 +1,13 @@
 Revision history for DBIx-NoSQL-Store-Manager
 
+0.2.0 2012-11-23
+ [ENHANCEMENTS]
+ - method 'create' as a shorter alias to 'new_model_object'
+ - search() functionality now work
+
+ [STATISTICS]
+ - code churn: 8 files changed, 39 insertions(+), 17 deletions(-)
+
 0.1.1 2012-09-30
  [BUG FIXES]
  - Explicitly require perl 5.10.0

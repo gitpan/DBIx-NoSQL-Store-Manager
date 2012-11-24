@@ -3,7 +3,7 @@ BEGIN {
   $DBIx::NoSQL::Store::Manager::StoreKey::AUTHORITY = 'cpan:YANICK';
 }
 {
-  $DBIx::NoSQL::Store::Manager::StoreKey::VERSION = '0.1.1';
+  $DBIx::NoSQL::Store::Manager::StoreKey::VERSION = '0.2.0';
 }
 # ABSTRACT: Marks attributes defining the object's key in the store
 
@@ -14,6 +14,7 @@ Moose::Util::meta_attribute_alias('StoreKey');
 1;
 
 __END__
+
 =pod
 
 =head1 NAME
@@ -22,7 +23,7 @@ DBIx::NoSQL::Store::Manager::StoreKey - Marks attributes defining the object's k
 
 =head1 VERSION
 
-version 0.1.1
+version 0.2.0
 
 =head1 SYNOPSIS
 
@@ -54,4 +55,3 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-

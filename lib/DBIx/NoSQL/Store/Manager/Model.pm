@@ -3,7 +3,7 @@ BEGIN {
   $DBIx::NoSQL::Store::Manager::Model::AUTHORITY = 'cpan:YANICK';
 }
 {
-  $DBIx::NoSQL::Store::Manager::Model::VERSION = '0.1.1';
+  $DBIx::NoSQL::Store::Manager::Model::VERSION = '0.2.0';
 }
 #ABSTRACT: Role for classes to be handled by DBIx::NoSQL::Store::Manager
 
@@ -85,6 +85,7 @@ method indexes {
 1;
 
 __END__
+
 =pod
 
 =head1 NAME
@@ -93,7 +94,7 @@ DBIx::NoSQL::Store::Manager::Model - Role for classes to be handled by DBIx::NoS
 
 =head1 VERSION
 
-version 0.1.1
+version 0.2.0
 
 =head1 SYNOPSIS
 
@@ -205,4 +206,3 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-

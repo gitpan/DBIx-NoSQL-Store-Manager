@@ -3,7 +3,7 @@ BEGIN {
   $DBIx::NoSQL::Store::Manager::AUTHORITY = 'cpan:YANICK';
 }
 {
-  $DBIx::NoSQL::Store::Manager::VERSION = '0.1.1';
+  $DBIx::NoSQL::Store::Manager::VERSION = '0.2.0';
 }
 #ABSTRACT: DBIx::NoSQL as a Moose object store 
 
@@ -75,9 +75,7 @@ method BUILD(@args) {
         my $model = $self->model( $p->store_model );
         
         $model->_wrap( sub {
-            my $inflated = $p->unpack($_[0]);
-            $inflated->store_db($self);
-            return $inflated;
+            $p->unpack($_[0], inject => { store_db => $self } );
         });
 
         $model->index(@$_) for $p->indexes;
@@ -85,14 +83,16 @@ method BUILD(@args) {
 };
 
 
-method new_model_object ( $model, @args ) {
+method new_model_object(@args) { $self->create(@args) }
+
+method create ( $model, @args ) {
     $self->model_class($model)->new( store_db => $self, @args);   
 }
 
 1;
 
-
 __END__
+
 =pod
 
 =head1 NAME
@@ -101,7 +101,7 @@ DBIx::NoSQL::Store::Manager - DBIx::NoSQL as a Moose object store
 
 =head1 VERSION
 
-version 0.1.1
+version 0.2.0
 
 =head1 SYNOPSIS
 
@@ -137,6 +137,7 @@ Creates a new store manager.
 =over
 
 =item models => \@classes
+
 =item models => $class
 
 Classes to be imported as models for the store. Namespaces can also be given
@@ -171,6 +172,8 @@ Returns the full class name of all models known to the store.
 
 Returns the full class name of the given model.
 
+=head2 create( $model_name, @args )
+
 =head2 new_model_object( $model_name, @args )
 
 Shortcut constructor for a model class of the store. Equivalent to
@@ -200,4 +203,3 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-

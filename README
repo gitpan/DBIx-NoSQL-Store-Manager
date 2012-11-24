@@ -2,7 +2,7 @@ NAME
     DBIx::NoSQL::Store::Manager - DBIx::NoSQL as a Moose object store
 
 VERSION
-    version 0.1.1
+    version 0.2.0
 
 SYNOPSIS
         package MyStore;
@@ -31,7 +31,8 @@ METHODS
     Creates a new store manager.
 
    Arguments
-    models => \@classes =item models => $class
+    models => \@classes
+    models => $class
         Classes to be imported as models for the store. Namespaces can also
         be given with a trailing "::", in which case all modules found under
         that namespace will be imported. If only one class is to be used, it
@@ -59,6 +60,7 @@ METHODS
   model_class( $name )
     Returns the full class name of the given model.
 
+  create( $model_name, @args )
   new_model_object( $model_name, @args )
     Shortcut constructor for a model class of the store. Equivalent to
 
