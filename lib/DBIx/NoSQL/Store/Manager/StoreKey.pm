@@ -3,7 +3,7 @@ BEGIN {
   $DBIx::NoSQL::Store::Manager::StoreKey::AUTHORITY = 'cpan:YANICK';
 }
 {
-  $DBIx::NoSQL::Store::Manager::StoreKey::VERSION = '0.2.0';
+  $DBIx::NoSQL::Store::Manager::StoreKey::VERSION = '0.2.1';
 }
 # ABSTRACT: Marks attributes defining the object's key in the store
 
@@ -23,7 +23,7 @@ DBIx::NoSQL::Store::Manager::StoreKey - Marks attributes defining the object's k
 
 =head1 VERSION
 
-version 0.2.0
+version 0.2.1
 
 =head1 SYNOPSIS
 

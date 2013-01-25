@@ -3,7 +3,7 @@ BEGIN {
   $DBIx::NoSQL::Store::Manager::Model::AUTHORITY = 'cpan:YANICK';
 }
 {
-  $DBIx::NoSQL::Store::Manager::Model::VERSION = '0.2.0';
+  $DBIx::NoSQL::Store::Manager::Model::VERSION = '0.2.1';
 }
 #ABSTRACT: Role for classes to be handled by DBIx::NoSQL::Store::Manager
 
@@ -40,6 +40,7 @@ class_has store_model => (
        my( $class ) = $self->class_precedence_list;
 
        $class =~ s/^.*::Model:://;
+       $class =~ s/::/_/g;
        return $class;
     },
 );
@@ -94,7 +95,7 @@ DBIx::NoSQL::Store::Manager::Model - Role for classes to be handled by DBIx::NoS
 
 =head1 VERSION
 
-version 0.2.0
+version 0.2.1
 
 =head1 SYNOPSIS
 

@@ -3,12 +3,10 @@ abstract: 'DBIx::NoSQL as a Moose object store '
 author:
   - 'Yanick Champoux <yanick@babyl.dyndns.org>'
 build_requires:
-  Carp: 0
   File::Find: 0
   File::Temp: 0
   Module::Build: 0.3601
-  Scalar::Util: 0
-  Test::More: 0.94
+  Test::More: 0.88
 configure_requires:
   Module::Build: 0.3601
 dynamic_config: 0
@@ -21,16 +19,16 @@ name: DBIx-NoSQL-Store-Manager
 provides:
   DBIx::NoSQL::Store::Manager:
     file: lib/DBIx/NoSQL/Store/Manager.pm
-    version: v0.2.0
+    version: v0.2.1
   DBIx::NoSQL::Store::Manager::Model:
     file: lib/DBIx/NoSQL/Store/Manager/Model.pm
-    version: v0.2.0
+    version: v0.2.1
   DBIx::NoSQL::Store::Manager::StoreIndex:
     file: lib/DBIx/NoSQL/Store/Manager/StoreIndex.pm
-    version: v0.2.0
+    version: v0.2.1
   DBIx::NoSQL::Store::Manager::StoreKey:
     file: lib/DBIx/NoSQL/Store/Manager/StoreKey.pm
-    version: v0.2.0
+    version: v0.2.1
 requires:
   DBIx::NoSQL::Store: 0
   Method::Signatures: 0
@@ -47,7 +45,7 @@ resources:
   bugtracker: http://rt.cpan.org/Public/Dist/Display.html?Name=DBIx-NoSQL-Store-Manager
   homepage: http://search.cpan.org/dist/DBIx-NoSQL-Store-Manager/
   repository: https://github.com/yanick/DBIx-NoSQL-Store-Manager.git
-version: 0.2.0
+version: 0.2.1
 x_author_pledge:
   version: 1
 x_authority: cpan:YANICK

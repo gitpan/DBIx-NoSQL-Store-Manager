@@ -3,7 +3,7 @@ BEGIN {
   $DBIx::NoSQL::Store::Manager::AUTHORITY = 'cpan:YANICK';
 }
 {
-  $DBIx::NoSQL::Store::Manager::VERSION = '0.2.0';
+  $DBIx::NoSQL::Store::Manager::VERSION = '0.2.1';
 }
 #ABSTRACT: DBIx::NoSQL as a Moose object store 
 
@@ -45,41 +45,46 @@ has _models => (
     traits => [ 'Hash' ],
     is => 'ro',
     isa => 'HashRef',
-    lazy => 1,
-    default => method {
-        my %model;
-        for my $m ( $self->arg_models ) {
-            if ( $m =~ s/::$// ) {
-                $self->search_path( new => $m );
-                for ( $self->plugins ) {
-                    $model{$_->store_model} = $_;
-                }
-            }
-            else {
-                require $m;
-                $model{$m->store_model} = $m;
-            }
-        }
-        return \%model;
-    },
     handles => {
-        model_names => 'keys',
+        model_names   => 'keys',
         model_classes => 'values',
-        model_class => 'get',
+        model_class   => 'get',
+        _set_model    => 'set',
     },
 );
 
-method BUILD(@args) {
+method _register_models( @models ) {
+    # expand namespaces into their plugins
+    @models = map { 
+        s/::$// ? do {
+        $self->search_path( new => $_ );
+        $self->plugins } : $_
+    } @models;
 
-    for my $p ( $self->model_classes ) {
-        my $model = $self->model( $p->store_model );
-        
-        $model->_wrap( sub {
-            $p->unpack($_[0], inject => { store_db => $self } );
+
+    for my $model ( @models ) {
+        eval "use $model; 1" or die "couldn't load '$_': $@\n";
+        $self->_set_model( $model->store_model => $model );
+
+        my $store_model = $self->model($model->store_model);
+
+
+        $store_model->_wrap( sub {
+            my $ref = shift;
+            $ref = $ref->[0] if ref($ref) eq 'ARRAY';
+            $model->unpack($ref, inject => { store_db => $self } );
         });
 
-        $model->index(@$_) for $p->indexes;
+        $store_model->index(@$_) for $model->indexes;
     }
+}
+
+method BUILD($args) {
+    $args->{models} ||= [ 
+        join "::", ($self->meta->class_precedence_list)[0], 'Model', '' 
+    ];
+
+    $self->_register_models( @{ $args->{models} } );
 };
 
 
@@ -101,7 +106,7 @@ DBIx::NoSQL::Store::Manager - DBIx::NoSQL as a Moose object store
 
 =head1 VERSION
 
-version 0.2.0
+version 0.2.1
 
 =head1 SYNOPSIS
 

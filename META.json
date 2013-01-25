@@ -24,6 +24,11 @@
             "Module::Build" : "0.3601"
          }
       },
+      "develop" : {
+         "requires" : {
+            "version" : "0.9901"
+         }
+      },
       "runtime" : {
          "requires" : {
             "DBIx::NoSQL::Store" : "0",
@@ -41,30 +46,28 @@
       },
       "test" : {
          "requires" : {
-            "Carp" : "0",
             "File::Find" : "0",
             "File::Temp" : "0",
-            "Scalar::Util" : "0",
-            "Test::More" : "0.94"
+            "Test::More" : "0.88"
          }
       }
    },
    "provides" : {
       "DBIx::NoSQL::Store::Manager" : {
          "file" : "lib/DBIx/NoSQL/Store/Manager.pm",
-         "version" : "v0.2.0"
+         "version" : "v0.2.1"
       },
       "DBIx::NoSQL::Store::Manager::Model" : {
          "file" : "lib/DBIx/NoSQL/Store/Manager/Model.pm",
-         "version" : "v0.2.0"
+         "version" : "v0.2.1"
       },
       "DBIx::NoSQL::Store::Manager::StoreIndex" : {
          "file" : "lib/DBIx/NoSQL/Store/Manager/StoreIndex.pm",
-         "version" : "v0.2.0"
+         "version" : "v0.2.1"
       },
       "DBIx::NoSQL::Store::Manager::StoreKey" : {
          "file" : "lib/DBIx/NoSQL/Store/Manager/StoreKey.pm",
-         "version" : "v0.2.0"
+         "version" : "v0.2.1"
       }
    },
    "release_status" : "stable",
@@ -80,7 +83,7 @@
          "web" : "https://github.com/yanick/DBIx-NoSQL-Store-Manager"
       }
    },
-   "version" : "0.2.0",
+   "version" : "0.2.1",
    "x_author_pledge" : {
       "version" : 1
    },
