@@ -3,7 +3,7 @@ BEGIN {
   $DBIx::NoSQL::Store::Manager::Model::AUTHORITY = 'cpan:YANICK';
 }
 {
-  $DBIx::NoSQL::Store::Manager::Model::VERSION = '0.2.1';
+  $DBIx::NoSQL::Store::Manager::Model::VERSION = '0.2.2';
 }
 #ABSTRACT: Role for classes to be handled by DBIx::NoSQL::Store::Manager
 
@@ -95,7 +95,7 @@ DBIx::NoSQL::Store::Manager::Model - Role for classes to be handled by DBIx::NoS
 
 =head1 VERSION
 
-version 0.2.1
+version 0.2.2
 
 =head1 SYNOPSIS
 

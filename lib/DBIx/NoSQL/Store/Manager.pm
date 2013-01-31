@@ -3,7 +3,7 @@ BEGIN {
   $DBIx::NoSQL::Store::Manager::AUTHORITY = 'cpan:YANICK';
 }
 {
-  $DBIx::NoSQL::Store::Manager::VERSION = '0.2.1';
+  $DBIx::NoSQL::Store::Manager::VERSION = '0.2.2';
 }
 #ABSTRACT: DBIx::NoSQL as a Moose object store 
 
@@ -14,7 +14,7 @@ use Moose;
 
 use Moose::Util::TypeConstraints;
 
-use DBIx::NoSQL::Store;
+use DBIx::NoSQL 0.0020;
 use Method::Signatures;
 use Module::Pluggable require => 1;
 
@@ -106,7 +106,7 @@ DBIx::NoSQL::Store::Manager - DBIx::NoSQL as a Moose object store
 
 =head1 VERSION
 
-version 0.2.1
+version 0.2.2
 
 =head1 SYNOPSIS
 

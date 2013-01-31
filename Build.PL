@@ -20,13 +20,13 @@ my %module_build_args = (
     "Yanick Champoux <yanick\@babyl.dyndns.org>"
   ],
   "dist_name" => "DBIx-NoSQL-Store-Manager",
-  "dist_version" => "0.2.1",
+  "dist_version" => "0.2.2",
   "license" => "perl",
   "module_name" => "DBIx::NoSQL::Store::Manager",
   "recommends" => {},
   "recursive_test_files" => 1,
   "requires" => {
-    "DBIx::NoSQL::Store" => 0,
+    "DBIx::NoSQL" => "0.0020",
     "Method::Signatures" => 0,
     "Module::Pluggable" => 0,
     "Moose" => 0,

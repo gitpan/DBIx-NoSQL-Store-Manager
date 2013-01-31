@@ -19,18 +19,18 @@ name: DBIx-NoSQL-Store-Manager
 provides:
   DBIx::NoSQL::Store::Manager:
     file: lib/DBIx/NoSQL/Store/Manager.pm
-    version: v0.2.1
+    version: v0.2.2
   DBIx::NoSQL::Store::Manager::Model:
     file: lib/DBIx/NoSQL/Store/Manager/Model.pm
-    version: v0.2.1
+    version: v0.2.2
   DBIx::NoSQL::Store::Manager::StoreIndex:
     file: lib/DBIx/NoSQL/Store/Manager/StoreIndex.pm
-    version: v0.2.1
+    version: v0.2.2
   DBIx::NoSQL::Store::Manager::StoreKey:
     file: lib/DBIx/NoSQL/Store/Manager/StoreKey.pm
-    version: v0.2.1
+    version: v0.2.2
 requires:
-  DBIx::NoSQL::Store: 0
+  DBIx::NoSQL: 0.0020
   Method::Signatures: 0
   Module::Pluggable: 0
   Moose: 0
@@ -45,7 +45,7 @@ resources:
   bugtracker: http://rt.cpan.org/Public/Dist/Display.html?Name=DBIx-NoSQL-Store-Manager
   homepage: http://search.cpan.org/dist/DBIx-NoSQL-Store-Manager/
   repository: https://github.com/yanick/DBIx-NoSQL-Store-Manager.git
-version: 0.2.1
+version: 0.2.2
 x_author_pledge:
   version: 1
 x_authority: cpan:YANICK

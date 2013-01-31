@@ -3,7 +3,7 @@ BEGIN {
   $DBIx::NoSQL::Store::Manager::StoreIndex::AUTHORITY = 'cpan:YANICK';
 }
 {
-  $DBIx::NoSQL::Store::Manager::StoreIndex::VERSION = '0.2.1';
+  $DBIx::NoSQL::Store::Manager::StoreIndex::VERSION = '0.2.2';
 }
 # ABSTRACT: Marks attributes to be indexed in the store
 
@@ -29,7 +29,7 @@ DBIx::NoSQL::Store::Manager::StoreIndex - Marks attributes to be indexed in the 
 
 =head1 VERSION
 
-version 0.2.1
+version 0.2.2
 
 =head1 SYNOPSIS
 
